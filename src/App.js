@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import RegistrationPage from "./RegistrationPage";
 import HomePage from "./HomePage";
 import MatchPage from "./MatchPage";
+import MatchListPage from "./MatchListPage";
+
 // import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Route, Switch } from "react-router";
 import { BrowserRouter } from "react-router-dom";
@@ -38,7 +40,8 @@ export default App;
 
 export default class App extends Component {
   render() {
-    return (
+  
+      
       <BrowserRouter>
         <Switch>
           <Route path="/register">
