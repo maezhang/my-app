@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import { Form, Input, Button, Checkbox } from 'antd';
@@ -10,8 +10,7 @@ const Margins = styled.div`
   margin-right: 300px;
 `;
 
-
-
+/*
 function HomePage() {
   let history = useHistory();
 
@@ -28,14 +27,9 @@ function HomePage() {
       </Margins>
     );
 }
+*/
 
 //export default HomePage;
-export default withRouter(HomePage);
-
-
-
-/*
-let history = useHistory();
 
 export default class HomePage extends Component {
   constructor() {
@@ -45,6 +39,7 @@ export default class HomePage extends Component {
 
 
   goToRegistration = () => {
+    let history = useHistory();
     history.push("/register");
     this.setState({clicked : false});
   };
@@ -104,4 +99,4 @@ export default class HomePage extends Component {
   }
 }
 
-*/
+
