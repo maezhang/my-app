@@ -29,25 +29,19 @@ function HomePage() {
 }
 */
 
-//export default HomePage;
-
-export default class HomePage extends Component {
-  constructor() {
-    super();
-    this.state = {clicked : false};
-  }
 
 
-  goToRegistration = () => {
-    let history = useHistory();
+function HomePage() {
+
+  let history = useHistory();
+
+  let goToRegistration = () => {
     history.push("/register");
-    this.setState({clicked : false});
   };
-  NormalLoginForm = () => {}
-    onFinish = (values) => {
-      console.log('Received values of form: ', values);
-    };
-  render() {
+  let onFinish = (values) => {
+      console.log('Received values of form: ', values)};
+    
+  //render() {
     return (
       <Margins>
         <h1>Login</h1>
@@ -57,7 +51,7 @@ export default class HomePage extends Component {
         initialValues={{
             remember: true,
         }}
-        onFinish={this.onFinish}
+        onFinish={onFinish}
         >
             <Form.Item
                 name="username"
@@ -93,10 +87,10 @@ export default class HomePage extends Component {
         
       </Form.Item>
           </Form>
-        <Button onClick={this.goToRegistration}>Register now!</Button>
+        <Button onClick={goToRegistration}>Register now!</Button>
       </Margins>
     );
-  }
+  //}
 }
 
-
+export default HomePage;
