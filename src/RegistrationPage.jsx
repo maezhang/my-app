@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Form, Input, Button, Select } from "antd";
 import styled from "styled-components";
+import { useHistory } from "react-router-dom";
 
 const { TextArea } = Input;
 
@@ -13,6 +14,10 @@ const Margins = styled.div`
 export default class RegistrationPage extends Component {
   onFinish = (values) => {};
   onFinishFailed = (errorInfo) => {};
+
+  componentDidMount(){
+    this.forceUpdate();
+  }
 
   render() {
     return (
