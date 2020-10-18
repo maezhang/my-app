@@ -36,7 +36,7 @@ export default class MatchPage extends Component {
   render() {
     return (
       <HorizontalMain>
-        <Sidebar />
+        <Sidebar currentPage="matching" />
         <Margins>
           <h1>Find your workout buddies</h1>
           <Horizontal>
@@ -74,3 +74,5 @@ export default class MatchPage extends Component {
     );
   }
 }
+
+// export default MatchPage;
