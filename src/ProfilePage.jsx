@@ -1,13 +1,31 @@
 import React, { useEffect, useRef, useState} from 'react';
 import styled from "styled-components";
+import "./profilePics.css";
+import Sidebar from "./Sidebar";
+import { Card, Button } from "antd";
+import { CheckOutlined, CloseOutlined } from "@ant-design/icons";
 
 // POOJANS KEY: /Users/jonathanke/Downloads/googleCloudKey/google_compute_engine
 // ssh -i /Users/jonathanke/Downloads/googleCloudKey/google_compute_engine ppalwai@34.72.70.68
+
+const { Meta } = Card;
+
+const Horizontal = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const HorizontalMain = styled.div`
+  display: flex;
+`;
 
 const Margins = styled.div`
   margin: 100px;
   margin-left: 300px;
   margin-right: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 function ProfilePage(props) {
@@ -57,14 +75,22 @@ function ProfilePage(props) {
     return <div>Loading...</div>
   } else {
     return (
+      <HorizontalMain>
+        <Sidebar currentPage="matching" />
       <Margins>
         <div>
           <h1 id="profile-title">About Me</h1>
-          <p id= "name">Name: {info.first} {info.last}</p>
-          <p>Email: {info.email}</p>
-          <p></p>
+    <p id= "name">Name: {info.first} {info.last}</p>
+    <p id= "email">Email: {info.email}</p>
+    <p id = "work" >Favorite workout(s): {info.workout}</p>
+    <p id = "loc">Location: {info.loc}</p>
+    <p id = "age">Age: {info.age}</p>
+    <p>Gender: {info.gender}</p>
+    <p>About me: {info.about}</p>
+    
         </div>  
       </Margins>
+      </HorizontalMain>
     );
   } 
 }

@@ -28,16 +28,21 @@ const SelectedTab = styled.span`
 function Sidebar(props) {
   let history = useHistory();
 
+  let URLParse = new URLSearchParams((new URL(window.location.href)).search);
+  console.log(window.location.href);
+  const username = URLParse.get("user");
+  console.log(username);
+
   let goToProfile = () => {
-    history.push("/profile");
+    history.push("/profile?user="+username);
   };
 
   let goToMatches = () => {
-    history.push("/matches");
+    history.push("/matches?user"+username);
   };
 
   let findBuddies = () => {
-    history.push("/matching");
+    history.push("/matching?user"+username);
   };
 
   //   let P1 = Button;
