@@ -37,8 +37,7 @@ export default class App extends Component {
     return (
       <Router history={history}>
         <Switch>
-          <Route path="/register" RegistrationPage />
-          </Route>
+          <Route path="/register" component={RegistrationPage}/>
           <Route path="/">
             <HomePage />
           </Route>
