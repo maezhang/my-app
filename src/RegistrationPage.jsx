@@ -3,6 +3,8 @@ import { Form, Input, Button, Select } from "antd";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 
+const { TextArea } = Input;
+
 const Margins = styled.div`
   margin: 100px;
   margin-left: 300px;
@@ -95,7 +97,7 @@ export default class RegistrationPage extends Component {
           </Form.Item>
 
           <Form.Item label="About Me" name="aboutme">
-            <Input />
+            <TextArea rows={3} />
           </Form.Item>
 
           <Form.Item>

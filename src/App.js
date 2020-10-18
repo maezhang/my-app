@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import RegistrationPage from "./RegistrationPage";
 import HomePage from "./HomePage";
+import MatchPage from "./MatchPage";
 // import { BrowserRouter as Router, Route } from "react-router-dom";
-import {Route, Switch} from "react-router";
-import {BrowserRouter} from 'react-router-dom';
+import { Route, Switch } from "react-router";
+import { BrowserRouter } from "react-router-dom";
 // import history from "./history";
 import "./App.css";
 // import { createBrowserHistory } from "history";
@@ -36,14 +37,15 @@ export default App;
 //const history = createBrowserHistory();
 
 export default class App extends Component {
-
-
   render() {
     return (
       <BrowserRouter>
         <Switch>
-          <Route path="/register" >
+          <Route path="/register">
             <RegistrationPage />
+          </Route>
+          <Route path="/matching">
+            <MatchPage />
           </Route>
           <Route exact path="/">
             <HomePage />
