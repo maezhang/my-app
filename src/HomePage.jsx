@@ -21,11 +21,9 @@ function HomePage() {
   return (
     <Margins>
       <h1>Login</h1>
-      <div>
         <button onClick={handleClick} >
         Register now!
         </button>
-      </div>
     </Margins>
   );
 }
