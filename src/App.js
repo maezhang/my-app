@@ -54,6 +54,9 @@ export default class App extends Component {
           <Route path="/profile">
             <ProfilePage />
           </Route>
+          <Route path="/matches">
+              <MatchListPage/>
+          </Route>
           <Route exact path="/">
             <HomePage />
           </Route>

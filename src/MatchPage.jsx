@@ -44,7 +44,7 @@ export default class MatchPage extends Component {
 
   constructor() {
     super();
-    this.state = {first:'N/A',last:'N/A',workout:'N/A',about:'N/A',profile:'N/A'};
+    this.state = {first:'NA',last:'NA',workout:'NA',about:'NA',profile:'NA'};
     this.swipeLeft = this.swipeLeft.bind(this);
     this.swipeRight = this.swipeRight.bind(this);
   }

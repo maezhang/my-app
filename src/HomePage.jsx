@@ -97,9 +97,8 @@ function HomePage() {
     >
                 <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username"
                   onChange={(e) => {setUser(e.target.value);}}/>
-
     </Form.Item>
-    <Form.Item
+    {/* <Form.Item
       name="password"
       rules={[
         {
@@ -113,7 +112,7 @@ function HomePage() {
         type="password"
         placeholder="Password"
       />
-    </Form.Item>
+    </Form.Item> */}
     <Form.Item>
       <Button onClick={goToProfile} type="primary" htmlType="submit" className="login-form-button">
         Log in

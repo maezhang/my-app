@@ -38,11 +38,11 @@ function Sidebar(props) {
   };
 
   let goToMatches = () => {
-    history.push("/matches?user"+username);
+    history.push("/matches?user="+username);
   };
 
   let findBuddies = () => {
-    history.push("/matching?user"+username);
+    history.push("/matching?user="+username);
   };
 
   //   let P1 = Button;
