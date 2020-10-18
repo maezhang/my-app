@@ -1,4 +1,4 @@
-import {React} from "react";
+import {React, Link} from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 
@@ -22,9 +22,12 @@ function HomePage() {
     <Margins>
       <h1>Login</h1>
       <div>
-        <button onClick={handleClick} type="button" />
-          Register now!
-          </button>
+        <button onClick={handleClick} >
+        Register now!
+        </button>
+        <div>
+          <Link to="/register"></Link>
+        </div>
       </div>
     </Margins>
   );
