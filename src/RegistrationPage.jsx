@@ -12,6 +12,10 @@ export default class RegistrationPage extends Component {
   onFinish = (values) => {};
   onFinishFailed = (errorInfo) => {};
 
+  componentDidMount(){
+    this.forceUpdate();
+  }
+
   render() {
     const layout = {
       //   labelCol: { span: 8 },

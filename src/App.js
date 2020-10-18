@@ -31,11 +31,13 @@ export default App;
 
 */
 export default class App extends Component {
+
+
   render() {
     return (
       <Router history={history}>
         <Switch>
-          <Route path="/register">
+          <Route path="/register" >
             <RegistrationPage />
           </Route>
           <Route path="/">

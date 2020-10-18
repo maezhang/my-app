@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
 
-
+// POOJANS KEY: /Users/jonathanke/Downloads/googleCloudKey/google_compute_engine
+// ssh -i /Users/jonathanke/Downloads/googleCloudKey/google_compute_engine ppalwai@34.72.70.68
 
 class ProfilePage extends React.Component {
 
@@ -48,9 +49,11 @@ class ProfilePage extends React.Component {
         } else {
           const info = this.state.info
           return (
-            <center>
-              
-            </center>  
+            <div>
+              <p id="profile-title">About Me</p>
+              <p id= "name"><\p>
+            
+            </div>  
           );
         }
     }

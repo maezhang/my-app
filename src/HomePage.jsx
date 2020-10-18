@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { Button } from "antd";
-import history from "./history";
+import {React} from "react";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
+
 
 const Margins = styled.div`
   margin: 100px;
@@ -9,11 +9,44 @@ const Margins = styled.div`
   margin-right: 300px;
 `;
 
-// let history = useHistory();
 
-export default class App extends Component {
+
+function HomePage() {
+  let history = useHistory();
+
+  function handleClick() {
+    history.push('/register');
+  }
+
+  return (
+    <Margins>
+      <h1>Login</h1>
+      <div>
+        <button onClick={handleClick} type="button" />
+          Register now!
+          </button>
+      </div>
+    </Margins>
+  );
+}
+
+export default HomePage;
+
+
+
+/*
+let history = useHistory();
+
+export default class HomePage extends Component {
+  constructor() {
+    super();
+    this.state = {clicked : false};
+  }
+
+
   goToRegistration = () => {
     history.push("/register");
+    this.setState({clicked : false});
   };
 
   render() {
@@ -25,3 +58,5 @@ export default class App extends Component {
     );
   }
 }
+
+*/
