@@ -2,9 +2,11 @@ import React, { Component } from "react";
 import RegistrationPage from "./RegistrationPage";
 import HomePage from "./HomePage";
 // import { BrowserRouter as Router, Route } from "react-router-dom";
-import { Route, Router, Switch } from "react-router";
-import history from "./history";
+import {Route, Switch} from "react-router";
+import {BrowserRouter} from 'react-router-dom';
+// import history from "./history";
 import "./App.css";
+// import { createBrowserHistory } from "history";
 /*
 function App() {
   return (
@@ -30,19 +32,24 @@ function App() {
 export default App;
 
 */
+
+//const history = createBrowserHistory();
+
 export default class App extends Component {
 
 
   render() {
     return (
-      <Router history={history}>
+      <BrowserRouter>
         <Switch>
-          <Route path="/register" component={RegistrationPage}/>
-          <Route path="/">
+          <Route path="/register" >
+            <RegistrationPage />
+          </Route>
+          <Route exact path="/">
             <HomePage />
           </Route>
         </Switch>
-      </Router>
+      </BrowserRouter>
     );
   }
 }

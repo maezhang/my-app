@@ -1,6 +1,7 @@
-import {React} from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
+import { withRouter } from "react-router";
 
 
 const Margins = styled.div`
@@ -16,19 +17,20 @@ function HomePage() {
 
   function handleClick() {
     history.push('/register');
-  }
+  };
 
   return (
-    <Margins>
-      <h1>Login</h1>
-        <button onClick={handleClick} >
-        Register now!
+      <Margins>
+        <h1>Login</h1>
+        <button onClick={handleClick}>
+          Register now!
         </button>
-    </Margins>
-  );
+      </Margins>
+    );
 }
 
-export default HomePage;
+//export default HomePage;
+export default withRouter(HomePage);
 
 
 
