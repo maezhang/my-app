@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import RegistrationPage from "./RegistrationPage";
 import HomePage from "./HomePage";
 import MatchPage from "./MatchPage";
+import ProfilePage from "./ProfilePage"
 // import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Route, Switch } from "react-router";
 import { BrowserRouter } from "react-router-dom";
@@ -46,6 +47,9 @@ export default class App extends Component {
           </Route>
           <Route path="/matching">
             <MatchPage />
+          </Route>
+          <Route path="/profile">
+            <ProfilePage />
           </Route>
           <Route exact path="/">
             <HomePage />
