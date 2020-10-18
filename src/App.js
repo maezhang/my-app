@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import RegistrationPage from "./RegistrationPage";
 import HomePage from "./HomePage";
+import MatchPage from "./MatchPage";
 // import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Route, Router, Switch } from "react-router";
 import history from "./history";
@@ -37,6 +38,9 @@ export default class App extends Component {
         <Switch>
           <Route path="/register">
             <RegistrationPage />
+          </Route>
+          <Route path="/matching">
+            <MatchPage />
           </Route>
           <Route path="/">
             <HomePage />
