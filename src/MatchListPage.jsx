@@ -44,8 +44,13 @@ function getUsername() {
 
 export default class MatchListPage extends Component {
 
-  componentDidMount(){
+  constructor() {
+    super();
+    this.state = [];
+  }
 
+  componentDidMount(){
+    this.getNewProfile();
   }
 
   getNewProfile() {
@@ -66,13 +71,7 @@ export default class MatchListPage extends Component {
           .then((res) => 
               {
                 console.log("Parsed return...");
-                this.setState({
-                  first: res.first,
-                  last: res.last,
-                  workout: res.workout,
-                  about: res.about,
-                  profile: res.username
-                });
+                this.setState(res);
               },
               // Note: it's important to handle errors here
                 // instead of a catch() block so that we don't swallow
@@ -82,18 +81,27 @@ export default class MatchListPage extends Component {
   }
 
   render() {
+    const listOfMatches = Object.keys(this.state);
+    console.log(this.state);
+    let matchCards = listOfMatches.map((key) => {
+      return <Card title={key}>
+        <p>About me: {this.state[key].about}</p>
+    <p>Email: {this.state[key].email}</p>
+        </Card>
+    })
     return (
       <HorizontalMain>
         <Sidebar currentPage="matches" />
         <Margins>
+        <h1>Your Matches</h1>
           <Horizontal>
             <MarginN>
-              
-            <Card title="Your Matches" bordered={false} style={{ width: 300 }}>
+              {matchCards}
+            {/* <Card title={"hi"} bordered={false} style={{ width: 300 }}>
+            <p></p>
             <p>Card content</p>
             <p>Card content</p>
-            <p>Card content</p>
-          </Card>
+          </Card> */}
             </MarginN>
 
             <MarginY>
