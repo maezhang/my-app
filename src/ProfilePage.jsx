@@ -87,7 +87,6 @@ function ProfilePage(props) {
     <p id = "age">Age: {info.age}</p>
     <p>Gender: {info.gender}</p>
     <p>About me: {info.about}</p>
-    
         </div>  
       </Margins>
       </HorizontalMain>

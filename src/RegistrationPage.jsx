@@ -1,8 +1,9 @@
-import React, {useState} from "react";
-import { Form, Input, Button, Select } from "antd";
+import React, {Component, useState} from "react";
+import { Form, Input, Button, Select, Upload } from "antd";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
-import {UserOutlined} from "@ant-design/icons";
+import {UserOutlined, UploadOutlined} from "@ant-design/icons";
+import renderEmpty from "antd/lib/config-provider/renderEmpty";
 
 const { TextArea } = Input;
 
@@ -12,9 +13,19 @@ const Margins = styled.div`
   margin-right: 300px;
 `;
 
+class Mycomponet extends Component {
+
+  constructor();
+    this.state 
+
+  componentWillUpdate();
+
+  render();
+}
+
 function RegistrationPage() {
   let history = useHistory();
-  let [first, setFirst] = useState('');
+  let [first, setFirst] = useState('1');
   let [last, setLast] = useState('');
   let [user, setUser] = useState('');
   let [email, setEmail] = useState('');
@@ -23,15 +34,23 @@ function RegistrationPage() {
   let [work, setWork] = useState('');
   let [loc, setLoc] = useState('');
   let [about, setAbout] = useState('N/A');
+  let [pic, setPic] = useState('');
 
   let findBuddies = () => {
     history.push("/matching");
   };
 
   let onFinish = (values) => {
-    findBuddies();
+    //findBuddies();
+    newProfile(values);
   };
   let onFinishFailed = (errorInfo) => {};
+
+  function printChange({file, fileList}){
+    if (file.status !== 'uploading') {
+      console.log(file, fileList);
+    }
+  };
 
   function newProfile(event){
     console.log(user);
@@ -41,21 +60,22 @@ function RegistrationPage() {
         method:"POST",
         cache: "no-cache",
         headers:{
-            "content_type":"application/json",
-        }, body:JSON.stringify({name : 'joy'})
+            "content_type":"image/png",
+        }, body: pic
         })
           .then(res => {
               console.log("Result:");
               console.log(res);
-              return res.json();
+              return res.text();
             })
           .then((res) => 
               {
                 console.log("Parsed return...");
+                console.log(res);
                 if (res == "Success"){
-                  history.push("/profile?user="+user);
+                  //history.push("/profile?user="+user);
                 } else {
-                  document.getElementById("Fail").textContent = "Not Enough Details Filled"
+                  console.log("Uh oh...");
                 }
               },
               // Note: it's important to handle errors here
@@ -163,6 +183,19 @@ function RegistrationPage() {
         <Button onClick={newProfile} type="primary" htmlType="submit" className="login-form-button">
             Submit
           </Button>
+        </Form.Item>
+        <Form.Item>
+          <Upload 
+            name="profile-picture"
+            onChange={printChange}
+            beforeUpload={(file) => {
+              setPic(file);
+              console.log(file);
+              console.log(file.name);}}>
+            <Button>
+            <Button icon={<UploadOutlined />}>Upload Profile Picture!</Button>
+            </Button>
+          </Upload>
         </Form.Item>
           </Form>
     </Margins>
